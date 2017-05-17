@@ -45,6 +45,6 @@ void Node::print(){
     cout << (*it).next->name << " ";
     noLinks = false;
   }
-  if (noLinks) cout << "No Links" << endl;
+  if (noLinks) cout << "No Links";
   cout << endl;
 }

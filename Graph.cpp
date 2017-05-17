@@ -13,10 +13,26 @@ void Graph::add(char a){
   nodes.push_back(new Node(a));
 }
 void Graph::remove(char a, char b){
-  
+  Node* node1 = nodeLookup(a);
+  Node* node2 = nodeLookup(b);
+
+  if ( node1 && node2 ){
+    node1->remove(node2); 
+  } 
 }
 void Graph::remove(char a){
 
+  Node* removeNode = nodeLookup(a);
+
+  for(vector<Node*>::iterator it = nodes.begin(); it != nodes.end();it++) {
+      (*it)->remove(removeNode);
+    }
+  for(vector<Node*>::iterator it = nodes.begin(); it != nodes.end(); it++){
+      if ((*it) == removeNode){
+	nodes.erase(it);
+	break;
+      }
+  }
 }
 void Graph::print(){
   for(vector<Node*>::iterator it = nodes.begin(); it != nodes.end(); it++){

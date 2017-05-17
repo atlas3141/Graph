@@ -6,6 +6,8 @@
 
 using namespace std;
 
+class Node;
+
 struct Link{
   int weight;
   Node* next;
@@ -16,8 +18,12 @@ class Node{
 private:
   vector<Link> links;
 public:
+  Node(char newName);
   char name;
 
   bool remove(Node* toRemove);
-  void add(Node* toAdd, int newWeight);
+  bool add(Node* toAdd, int newWeight);
+  void print();
 };
+
+#endif

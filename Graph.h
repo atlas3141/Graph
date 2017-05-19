@@ -1,3 +1,4 @@
+//Graph is a class meant to hold a bunch of connected nodes and add and remove things
 #ifndef GRAPH_H
 #define GRAPH_H
 
@@ -17,6 +18,7 @@ class Graph{
   void remove(char a, char b);
   void remove(char a);
   void print();
+  void findPath(char a, char b);
   
 };
 #endif

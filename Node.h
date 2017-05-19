@@ -1,3 +1,5 @@
+//A node capable of holding an arbitrary amount of links
+
 #ifndef NODE_H
 #define NODE_H
 
@@ -11,6 +13,7 @@ class Node;
 struct Link{
   int weight;
   Node* next;
+  Node* last;
 };
 
 
@@ -19,8 +22,10 @@ private:
   vector<Link> links;
 public:
   Node(char newName);
+
   char name;
 
+  vector<Link*> getLinks();
   bool remove(Node* toRemove);
   bool add(Node* toAdd, int newWeight);
   void print();

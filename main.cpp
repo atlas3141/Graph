@@ -1,3 +1,11 @@
+/* Josh Howell Graph Creator
+A program that lets the user create a graph
+The graph holds an arbitrary amount of nodes and their connections
+The user can add and remove them through the command line
+There is also a path finding method to find the shortest path from one 
+point to another
+*/
+
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -55,7 +63,7 @@ int main(){
       cout << "Give me two nodes to find a path between" << endl;
       cin.getline(input,10);
       if (strlen(input) >= 3){
-	//	findPath(input[0],input[2]);
+	graph->findPath(input[0],input[2]);
       }
 
     }

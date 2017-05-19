@@ -15,10 +15,10 @@ void Graph::add(char a, char b, int newWeight){ //adds an edge to the graph betw
   } 
 }
 void Graph::add(char a){ // adds a single node to the graph
-  isNew = true;
+  bool isNew = true;
   //make sure its not already there
   for(vector<Node*>::iterator it = nodes.begin(); it!=nodes.end();it++){
-    if ((*it)->name = a){
+    if ((*it)->name == a){
       isNew = false;
     }
   }
